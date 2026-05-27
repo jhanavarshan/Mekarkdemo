@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Mekark – EOT Crane Manufacturer in India</title>
+<meta name="description" content="Mekark is a leading EOT crane manufacturer in Chennai delivering industrial overhead crane systems for manufacturing plants, steel industries, warehouses and infrastructure projects across India."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;color:#fff;overflow-x:hidden;background:#000}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{max-width:1280px;margin:0 auto;padding:0 40px}
+
+:root{
+  --yellow:#F5C400;
+  --black:#0a0a0a;
+  --glass-dark:rgba(0,0,0,0.50);
+  --glass-mid:rgba(0,0,0,0.38);
+  --glass-light:rgba(255,255,255,0.04);
+  --border:rgba(255,255,255,0.12);
+  --blur:blur(5px);
+  --blur-sm:blur(3px);
+}
+
+/* ===== FIXED VIDEO BACKGROUND ===== */
+#bgVideoWrap{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+}
+#bgVideo{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.bg-master-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.32);
+}
+
+/* ===== PROGRESS BAR ===== */
+#scrollProgressBar{
+  position:fixed;
+  top:0;
+  left:0;
+  height:3px;
+  width:0%;
+  background:var(--yellow);
+  z-index:9999;
+  transition:width .05s linear;
+}
+
+/* ===== PAGE WRAPPER ===== */
+#pageContent{
+  position:relative;
+  z-index:1;
+}
+
+/* ===== BUTTONS ===== */
+.btn-yellow{display:inline-block;background:var(--yellow);color:#000;font-weight:700;font-size:13px;letter-spacing:.08em;padding:14px 28px;transition:all .25s;cursor:pointer;border:none}
+.btn-yellow:hover{background:#e6b800;transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,196,0,0.4)}
+.btn-outline{display:inline-block;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-weight:600;font-size:13px;letter-spacing:.08em;padding:13px 26px;transition:all .25s;backdrop-filter:var(--blur-sm)}
+.btn-outline:hover{background:rgba(255,255,255,0.15);border-color:#fff}
+.btn-outline-white{display:inline-block;border:1.5px solid rgba(255,255,255,0.5);color:#fff;font-weight:600;font-size:13px;letter-spacing:.08em;padding:13px 26px;transition:all .25s}
+.btn-outline-white:hover{background:rgba(255,255,255,0.15)}
+.btn-full{width:100%;text-align:center}
+
+/* ===== TOP BAR ===== */
+.topbar{background:rgba(0,0,0,0.9);color:rgba(255,255,255,0.6);font-size:11px;letter-spacing:.08em;padding:9px 40px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06)}
+.topbar-right{display:flex;gap:24px}
+
+/* ===== NAVBAR ===== */
+.navbar{position:fixed;top:36px;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.06);backdrop-filter:var(--blur);border-bottom:1px solid var(--border);transition:top .3s,background .3s,box-shadow .3s}
+.navbar.scrolled{top:0;background:rgba(0,0,0,0.85);box-shadow:0 2px 30px rgba(0,0,0,0.4)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 40px;height:68px;display:flex;align-items:center;gap:40px}
+.logo{font-size:20px;font-weight:900;letter-spacing:.05em;display:flex;align-items:center;gap:8px;color:#fff}
+.logo-bar{display:inline-block;width:4px;height:22px;background:var(--yellow)}
+.nav-links{display:flex;gap:32px;margin-left:auto}
+.nav-links a{font-size:12px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,0.8);transition:color .2s}
+.nav-links a:hover{color:var(--yellow)}
+.nav-cta{display:flex;gap:12px;align-items:center;margin-left:24px}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;transition:all .3s}
+.mobile-menu{display:none;flex-direction:column;gap:0;background:rgba(0,0,0,0.95);backdrop-filter:var(--blur);border-top:1px solid var(--border)}
+.mobile-menu a{padding:16px 40px;font-size:13px;font-weight:600;letter-spacing:.08em;border-bottom:1px solid var(--border);display:block;color:#fff}
+.mobile-menu .btn-yellow{margin:16px 40px;display:block;text-align:center}
+.mobile-menu.open{display:flex}
+
+/* ===== SECTION LABEL ===== */
+.section-label{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--yellow);margin-bottom:16px;display:block}
+
+/* ===== HERO ===== */
+.hero{height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;position:relative}
+.hero-content{position:relative;z-index:2;text-align:left;max-width:760px;padding:0 40px;color:#fff}
+.hero-label{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--yellow);margin-bottom:20px;opacity:0;transform:translateY(20px);animation:fadeUp .8s .3s forwards}
+.hero-title{font-size:clamp(44px,6vw,88px);font-weight:900;line-height:1.0;margin-bottom:24px;opacity:0;transform:translateY(30px);animation:fadeUp .9s .5s forwards}
+.hero-sub{font-size:18px;font-weight:400;color:rgba(255,255,255,0.8);margin-bottom:40px;max-width:520px;line-height:1.6;opacity:0;transform:translateY(20px);animation:fadeUp .8s .7s forwards}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeUp .8s .9s forwards}
+.scroll-indicator{position:absolute;bottom:40px;right:48px;display:flex;flex-direction:column;align-items:center;gap:12px;color:rgba(255,255,255,0.5);font-size:10px;letter-spacing:.15em}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent);animation:scrollPulse 2s infinite}
+@keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+/* ===== GLASS SECTION BASE ===== */
+.glass-section{background:var(--glass-dark);backdrop-filter:var(--blur);border-top:1px solid var(--border)}
+.glass-section-mid{background:var(--glass-mid);backdrop-filter:var(--blur)}
+.glass-section-light{background:rgba(0,0,0,0.35);backdrop-filter:var(--blur-sm)}
+
+/* ===== INTRO STRIP ===== */
+.intro-strip{padding:100px 0;background:rgba(0,0,0,0.42);backdrop-filter:blur(4px);border-top:1px solid var(--border)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.intro-grid h2{font-size:clamp(28px,3vw,44px);font-weight:900;line-height:1.1;margin-top:12px;color:#fff}
+.intro-grid p{color:rgba(255,255,255,0.65);line-height:1.8;margin-bottom:16px}
+
+/* ===== BENEFITS ===== */
+.benefits-section{padding:80px 0;background:rgba(0,0,0,0.35);backdrop-filter:blur(4px)}
+.benefits-section h2{font-size:clamp(26px,2.5vw,40px);font-weight:900;margin-bottom:48px;color:#fff}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.benefit-item{display:flex;align-items:flex-start;gap:14px;padding:28px 32px;font-size:15px;font-weight:500;background:rgba(0,0,0,0.40);backdrop-filter:blur(3px);transition:all .3s;color:rgba(255,255,255,0.85)}
+.benefit-item:hover{background:rgba(245,196,0,0.12);color:#fff}
+.benefit-item:hover .benefit-check{background:var(--yellow);color:#000}
+.benefit-check{min-width:26px;height:26px;background:rgba(245,196,0,0.2);color:var(--yellow);font-weight:900;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:2px;border:1px solid rgba(245,196,0,0.4);transition:all .3s}
+
+/* ===== PROCESS SECTION ===== */
+.process-section{padding:100px 0 0;background:rgba(0,0,0,0.36);backdrop-filter:blur(4px)}
+.process-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:80px}
+.process-intro h2{font-size:clamp(30px,3.5vw,52px);font-weight:900;line-height:1.05;color:#fff}
+.process-intro p{color:rgba(255,255,255,0.65);line-height:1.8;font-size:17px;padding-top:16px}
+.process-steps{display:flex;flex-direction:column;gap:0}
+.process-step{display:grid;grid-template-columns:1fr 1fr;min-height:560px;opacity:0;transform:translateY(40px);transition:opacity .7s,transform .7s}
+.process-step.visible{opacity:1;transform:translateY(0)}
+.process-step.reverse{direction:rtl}
+.process-step.reverse .step-content,.process-step.reverse .step-image{direction:ltr}
+.step-image{position:relative;overflow:hidden}
+.step-image img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.process-step:hover .step-image img{transform:scale(1.04)}
+.step-tag{position:absolute;bottom:0;left:0;right:0;background:var(--yellow);color:#000;font-size:11px;font-weight:700;letter-spacing:.12em;padding:12px 24px;display:flex;justify-content:space-between}
+.step-content{padding:60px 64px;display:flex;flex-direction:column;justify-content:center;background:rgba(0,0,0,0.52);backdrop-filter:blur(4px)}
+.phase-num{font-size:12px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,0.4);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.phase-badge{display:inline-block;background:var(--yellow);color:#000;font-size:11px;font-weight:700;letter-spacing:.1em;padding:6px 14px;margin-bottom:20px}
+.step-content h3{font-size:clamp(22px,2.5vw,36px);font-weight:900;line-height:1.1;margin-bottom:20px;color:#fff}
+.step-content p{color:rgba(255,255,255,0.65);line-height:1.8;font-size:15px;margin-bottom:28px}
+.phase-list{display:flex;flex-direction:column;gap:10px}
+.phase-list li{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,0.75)}
+.phase-list li::before{content:'';display:inline-block;width:24px;height:2px;background:var(--yellow);flex-shrink:0}
+
+/* ===== SOLUTIONS ===== */
+.solutions-section{padding:100px 0;background:rgba(0,0,0,0.38);backdrop-filter:blur(4px);border-top:1px solid var(--border)}
+.solutions-section h2{font-size:clamp(26px,3vw,44px);font-weight:900;margin-bottom:56px;color:#fff}
+.solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.solution-card{background:rgba(0,0,0,0.48);backdrop-filter:blur(3px);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.solution-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.5)}
+.solution-img{height:220px;overflow:hidden}
+.solution-body{padding:28px}
+.solution-body h4{font-size:18px;font-weight:800;margin-bottom:12px;color:#fff}
+.solution-body p{color:rgba(255,255,255,0.6);font-size:14px;line-height:1.7;margin-bottom:16px}
+.solution-tags{display:flex;flex-wrap:wrap;gap:8px}
+.solution-tags span{font-size:11px;font-weight:600;letter-spacing:.06em;background:rgba(245,196,0,0.12);color:var(--yellow);padding:5px 10px;border:1px solid rgba(245,196,0,0.3)}
+.solution-card-dark{background:rgba(245,196,0,0.08);border:1px solid rgba(245,196,0,0.2)}
+.solution-card-dark .solution-body{padding:48px 28px;display:flex;flex-direction:column;gap:20px;height:100%}
+.solution-card-dark h4{font-size:22px;color:#fff}
+.solution-card-dark p{color:rgba(255,255,255,0.6)}
+
+/* ===== WHY SECTION ===== */
+.why-section{padding:100px 0;background:rgba(0,0,0,0.40);backdrop-filter:blur(4px);border-top:1px solid var(--border)}
+.why-section h2{font-size:clamp(26px,3vw,44px);font-weight:900;margin-bottom:56px;color:#fff}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.why-card{padding:48px 36px;background:rgba(0,0,0,0.38);backdrop-filter:blur(3px);transition:all .3s;position:relative;overflow:hidden}
+.why-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--yellow);transition:width .4s}
+.why-card:hover::after{width:100%}
+.why-card:hover{background:rgba(245,196,0,0.08)}
+.why-num{font-size:48px;font-weight:900;color:rgba(255,255,255,0.1);margin-bottom:16px;line-height:1;transition:color .3s}
+.why-card:hover .why-num{color:var(--yellow)}
+.why-card h4{font-size:16px;font-weight:800;margin-bottom:12px;color:#fff}
+.why-card p{color:rgba(255,255,255,0.55);font-size:14px;line-height:1.7}
+
+/* ===== INDUSTRIES ===== */
+.industries-section{padding:100px 0;background:rgba(0,0,0,0.30);backdrop-filter:blur(3px);border-top:1px solid var(--border)}
+.industries-section h2{font-size:clamp(26px,3vw,44px);font-weight:900;color:#fff;margin-bottom:56px}
+.industries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.industry-card{position:relative;height:320px;overflow:hidden;cursor:pointer}
+.industry-card::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.9) 30%,rgba(0,0,0,0.3) 100%);z-index:1;transition:all .4s}
+.industry-card:hover::before{background:rgba(0,0,0,0.5)}
+.industry-card img{position:absolute;inset:0;transition:transform .5s}
+.industry-card:hover img{transform:scale(1.07)}
+.industry-overlay{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:28px 24px;transform:translateY(12px);transition:transform .4s}
+.industry-card:hover .industry-overlay{transform:translateY(0)}
+.industry-overlay h4{color:#fff;font-size:18px;font-weight:800;margin-bottom:8px}
+.industry-overlay p{color:rgba(255,255,255,0.7);font-size:13px;line-height:1.6;opacity:0;max-height:0;overflow:hidden;transition:opacity .4s .1s,max-height .4s}
+.industry-card:hover .industry-overlay p{opacity:1;max-height:100px}
+
+/* ===== URGENCY STRIP ===== */
+.urgency-strip{background:var(--yellow);padding:80px 0;text-align:center}
+.urgency-strip h2{font-size:clamp(24px,3vw,42px);font-weight:900;color:#000;margin-bottom:16px}
+.urgency-strip p{color:rgba(0,0,0,0.7);font-size:16px;max-width:640px;margin:0 auto 36px;line-height:1.7}
+.urgency-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.urgency-strip .btn-yellow{background:#000;color:#fff}
+.urgency-strip .btn-yellow:hover{background:#222}
+.urgency-strip .btn-outline-white{border-color:rgba(0,0,0,0.35);color:#000}
+.urgency-strip .btn-outline-white:hover{background:rgba(0,0,0,0.08)}
+
+/* ===== SERVICES ===== */
+.services-section{padding:100px 0;background:rgba(0,0,0,0.38);backdrop-filter:blur(4px);border-top:1px solid var(--border)}
+.services-section h2{font-size:clamp(26px,3vw,44px);font-weight:900;margin-bottom:56px;color:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.service-item{padding:36px 28px;background:rgba(0,0,0,0.38);backdrop-filter:blur(3px);transition:all .3s}
+.service-item:hover{background:rgba(245,196,0,0.1)}
+.service-item:hover .service-num{color:var(--yellow)}
+.service-num{font-size:36px;font-weight:900;color:rgba(255,255,255,0.08);margin-bottom:16px;display:block;transition:color .3s}
+.service-item h4{font-size:15px;font-weight:800;margin-bottom:10px;color:#fff}
+.service-item p{color:rgba(255,255,255,0.55);font-size:13px;line-height:1.7}
+
+/* ===== CONTACT ===== */
+.contact-section{padding:100px 0;background:rgba(0,0,0,0.48);backdrop-filter:blur(4px);border-top:1px solid var(--border)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-left h2{font-size:clamp(28px,3vw,44px);font-weight:900;color:#fff;margin-bottom:20px}
+.contact-left p{color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:32px;font-size:16px}
+.contact-benefits{display:flex;flex-direction:column;gap:12px}
+.contact-benefits li{color:rgba(255,255,255,0.7);font-size:14px;font-weight:500}
+.contact-form{display:flex;flex-direction:column;gap:12px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-form input,.contact-form textarea{background:rgba(255,255,255,0.06);border:1px solid var(--border);color:#fff;padding:16px 18px;font-family:inherit;font-size:14px;outline:none;width:100%;transition:border-color .25s;backdrop-filter:var(--blur-sm)}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,0.35)}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--yellow)}
+.contact-form textarea{resize:vertical}
+
+/* ===== FAQ ===== */
+.faq-section{padding:100px 0;background:rgba(0,0,0,0.40);backdrop-filter:blur(4px);border-top:1px solid var(--border)}
+.faq-section h2{font-size:clamp(26px,3vw,44px);font-weight:900;margin-bottom:48px;color:#fff}
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:24px 0;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#fff}
+.faq-q:hover{color:var(--yellow)}
+.faq-arrow{font-size:22px;font-weight:300;color:var(--yellow);transition:transform .3s}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;color:rgba(255,255,255,0.6);font-size:15px;line-height:1.8;padding:0}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:24px}
+.faq-item.open .faq-arrow{transform:rotate(45deg)}
+
+/* ===== FOOTER ===== */
+.footer{background:rgba(0,0,0,0.58);backdrop-filter:blur(4px);color:rgba(255,255,255,0.5);padding:80px 0 0;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;padding-bottom:60px}
+.footer .logo{margin-bottom:16px}
+.footer-grid>div>p{font-size:13px;line-height:1.8;margin-bottom:8px}
+.footer-grid h5{font-size:11px;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,0.3);margin-bottom:20px}
+.footer-grid ul li{font-size:13px;margin-bottom:10px;cursor:pointer;transition:color .2s}
+.footer-grid ul li:hover{color:#fff}
+.footer-bottom{border-top:1px solid var(--border);padding:24px 0;font-size:12px;text-align:center}
+
+/* ===== SCROLL REVEALS ===== */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .7s,transform .7s}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .7s,transform .7s}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .intro-grid,.process-intro,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .benefits-grid,.why-grid{grid-template-columns:1fr 1fr}
+  .solutions-grid,.services-grid{grid-template-columns:1fr 1fr}
+  .industries-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
+}
+@media(max-width:768px){
+  .topbar{display:none}
+  .navbar{top:0}
+  .container{padding:0 20px}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .nav-inner{padding:0 20px}
+  .process-step,.process-step.reverse{grid-template-columns:1fr;direction:ltr;min-height:auto}
+  .step-content{padding:36px 20px}
+  .benefits-grid{grid-template-columns:1fr}
+  .solutions-grid,.why-grid,.services-grid{grid-template-columns:1fr}
+  .industries-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .hero-content{padding:0 20px}
+  .hero-btns{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .solution-img{height:160px}
+  .industry-card{height:220px}
+}
+
+</style>
+</head>
+<body>
+
+<!-- FIXED VIDEO BACKGROUND — scrubs frame-by-frame on page scroll -->
+<div id="bgVideoWrap">
+  <video id="bgVideo" muted playsinline preload="auto" src="assets/hero.mp4"></video>
+  <div class="bg-master-overlay"></div>
+</div>
+
+<!-- SCROLL PROGRESS BAR (top of viewport) -->
+<div id="scrollProgressBar"></div>
+
+<!-- ALL PAGE CONTENT sits above the video -->
+<div id="pageContent">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span>EOT CRANE MANUFACTURER IN CHENNAI, SERVING INDUSTRIES ACROSS INDIA</span>
+    <div class="topbar-right">
+      <span>+91 44 0000 0000</span>
+      <span>inquiry@mekark.com</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="logo"><span class="logo-bar"></span>MEKARK</div>
+      <ul class="nav-links">
+        <li><a href="#industries">INDUSTRIES</a></li>
+        <li><a href="#capabilities">CAPABILITIES</a></li>
+        <li><a href="#performance">PERFORMANCE</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#contact" class="btn-outline">BOOK A CONSULTATION</a>
+        <a href="#contact" class="btn-yellow">GET A QUOTE →</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#industries">INDUSTRIES</a>
+      <a href="#capabilities">CAPABILITIES</a>
+      <a href="#performance">PERFORMANCE</a>
+      <a href="#contact" class="btn-yellow">GET A QUOTE →</a>
+    </div>
+  </nav>
+
+  <!-- HERO — 100vh, transparent, video shows through -->
+  <section class="hero" id="hero">
+    <div class="hero-content" id="heroContent">
+      <p class="hero-label">HEAVY-DUTY INDUSTRIAL LIFTING</p>
+      <h1 class="hero-title">Built to Lift.<br>Engineered to Last.</h1>
+      <p class="hero-sub">India's trusted EOT Crane manufacturer — from Chennai to every industrial zone nationwide.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-yellow">GET A QUOTE →</a>
+        <a href="#process" class="btn-outline-white">OUR PROCESS ↓</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <section class="intro-strip">
+    <div class="container">
+      <div class="intro-grid">
+        <div>
+          <p class="section-label">WHO WE ARE</p>
+          <h2>Heavy-Duty EOT Crane Systems Built for High-Performance Industries</h2>
+        </div>
+        <div>
+          <p>Mekark is a leading EOT crane manufacturer in Chennai delivering industrial overhead crane systems for manufacturing plants, steel industries, warehouses, infrastructure projects, and heavy engineering facilities across India.</p>
+          <p>From design and fabrication to installation and commissioning — we provide complete turnkey crane system solutions engineered for reliability, safety, and long-term industrial performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits-section">
+    <div class="container">
+      <p class="section-label">BUILT FOR INDUSTRIES THAT CANNOT AFFORD DOWNTIME</p>
+      <h2>Our EOT Crane Systems Help You:</h2>
+      <div class="benefits-grid">
+        <div class="benefit-item"><span class="benefit-check">✓</span>Handle heavy materials safely and efficiently</div>
+        <div class="benefit-item"><span class="benefit-check">✓</span>Reduce production delays and manual handling</div>
+        <div class="benefit-item"><span class="benefit-check">✓</span>Improve operational speed and workflow movement</div>
+        <div class="benefit-item"><span class="benefit-check">✓</span>Increase lifting precision and workplace safety</div>
+        <div class="benefit-item"><span class="benefit-check">✓</span>Lower maintenance costs and downtime</div>
+        <div class="benefit-item"><span class="benefit-check">✓</span>Support continuous industrial operations</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS SECTION -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <p class="section-label">OUR PROCESS</p>
+      <div class="process-intro">
+        <h2>Turnkey Crane Delivery,<br>Engineered End to End</h2>
+        <p>From the first load calculation to the final operator handover — every stage of your crane project is managed, documented, and delivered by a single accountable team.</p>
+      </div>
+    </div>
+    <div class="process-steps">
+
+      <div class="process-step" data-phase="01">
+        <div class="step-image">
+          <img src="assets/crane_engineering_design_1779893627490.png" alt="Design Engineering Phase"/>
+          <div class="step-tag">DESIGN PHASE — STRUCTURAL ENGINEERING <span>01 / 04</span></div>
+        </div>
+        <div class="step-content">
+          <p class="phase-num">PHASE <span class="phase-line">——</span> 01</p>
+          <div class="phase-badge">DESIGN ENGINEERING</div>
+          <h3>Precision-Engineered Before Steel Is Cut</h3>
+          <p>Every crane begins as a structural problem to be solved. Our engineering team conducts full load studies, span planning, and duty-cycle specification — translating your facility's demands into a documented design package.</p>
+          <ul class="phase-list">
+            <li>LOAD STUDY &amp; FEA ANALYSIS</li>
+            <li>SPAN &amp; BAY PLANNING</li>
+            <li>DUTY CYCLE CLASSIFICATION</li>
+            <li>STRUCTURAL DRAWING PACKAGE</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-step reverse" data-phase="02">
+        <div class="step-image">
+          <img src="assets/double_girder_crane_1779893580951.png" alt="Fabrication and Assembly"/>
+          <div class="step-tag">FABRICATION PHASE — SHOP FLOOR <span>02 / 04</span></div>
+        </div>
+        <div class="step-content">
+          <p class="phase-num">PHASE <span class="phase-line">——</span> 02</p>
+          <div class="phase-badge">FABRICATION &amp; ASSEMBLY</div>
+          <h3>Shop-Floor Manufacturing to Exacting Tolerances</h3>
+          <p>Our in-house fabrication facility produces every structural component under strict quality protocols — box girders, end carriages, hoisting mechanisms — each measured and verified before leaving the shop floor.</p>
+          <ul class="phase-list">
+            <li>IN-HOUSE STRUCTURAL FABRICATION</li>
+            <li>CNC MACHINED COMPONENTS</li>
+            <li>QUALITY CONTROL AT EVERY STAGE</li>
+            <li>ISO-COMPLIANT PROCESSES</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-step" data-phase="03">
+        <div class="step-image">
+          <img src="assets/crane_installation_1779893647076.png" alt="Installation and Erection"/>
+          <div class="step-tag">INSTALLATION — SITE ERECTION <span>03 / 04</span></div>
+        </div>
+        <div class="step-content">
+          <p class="phase-num">PHASE <span class="phase-line">——</span> 03</p>
+          <div class="phase-badge">INSTALLATION</div>
+          <h3>On-Site Erection With Zero Compromise on Safety</h3>
+          <p>Our installation crews manage the full erection sequence — runway beam alignment, girder lifting, trolley fitment, and electrical routing. Every stage follows a documented safety protocol.</p>
+          <ul class="phase-list">
+            <li>RUNWAY BEAM ALIGNMENT</li>
+            <li>GIRDER &amp; TROLLEY ERECTION</li>
+            <li>ELECTRICAL &amp; CONTROL ROUTING</li>
+            <li>SITE SAFETY COMPLIANCE</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="process-step reverse" data-phase="04">
+        <div class="step-image">
+          <img src="assets/automated_crane_1779893691669.png" alt="Commissioning and Handover"/>
+          <div class="step-tag">COMMISSIONING — HANDOVER <span>04 / 04</span></div>
+        </div>
+        <div class="step-content">
+          <p class="phase-num">PHASE <span class="phase-line">——</span> 04</p>
+          <div class="phase-badge">COMMISSIONING</div>
+          <h3>Load Tested. Certified. Ready to Operate.</h3>
+          <p>Before handover, every crane undergoes full load testing, functional checks, and operator training. You receive a complete technical documentation package and are ready for production from day one.</p>
+          <ul class="phase-list">
+            <li>FULL LOAD TESTING</li>
+            <li>OPERATOR TRAINING</li>
+            <li>TECHNICAL DOCUMENTATION</li>
+            <li>AMC &amp; SERVICE HANDOVER</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CRANE SOLUTIONS -->
+  <section class="solutions-section" id="capabilities">
+    <div class="container">
+      <p class="section-label">OUR EOT CRANE SOLUTIONS</p>
+      <h2>Industrial EOT Crane Systems for Every Application</h2>
+      <div class="solutions-grid">
+        <div class="solution-card">
+          <div class="solution-img"><img src="assets/single_girder_crane_1779893563730.png" alt="Single Girder EOT Crane"/></div>
+          <div class="solution-body">
+            <h4>Single Girder EOT Crane</h4>
+            <p>Cost-effective industrial overhead crane systems ideal for medium-duty material handling in warehouses, production facilities, and assembly units.</p>
+            <div class="solution-tags"><span>Manufacturing Plants</span><span>Warehouse Ops</span><span>Logistics</span><span>Medium-Duty</span></div>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-img"><img src="assets/double_girder_crane_1779893580951.png" alt="Double Girder EOT Crane"/></div>
+          <div class="solution-body">
+            <h4>Double Girder EOT Crane</h4>
+            <p>Heavy-duty EOT crane systems designed for high-capacity lifting operations and continuous industrial usage.</p>
+            <div class="solution-tags"><span>Steel Plants</span><span>Heavy Engineering</span><span>Power Plants</span><span>Infrastructure</span></div>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-img"><img src="assets/steel_plant_crane_1779893609345.png" alt="Steel Plant EOT Crane"/></div>
+          <div class="solution-body">
+            <h4>Steel Plant EOT Crane</h4>
+            <p>Specialized crane systems engineered for demanding steel industry environments including coil handling, billet movement, and foundry operations.</p>
+            <div class="solution-tags"><span>Steel Coil Handling</span><span>Billet Crane</span><span>Foundry</span></div>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-img"><img src="assets/warehouse_crane_1779893668960.png" alt="Warehouse Overhead Crane"/></div>
+          <div class="solution-body">
+            <h4>Warehouse Overhead Crane</h4>
+            <p>Efficient warehouse lifting crane solutions for streamlined inventory movement and industrial material handling.</p>
+            <div class="solution-tags"><span>Smooth Material Flow</span><span>Faster Loading</span><span>Reduced Manual Work</span></div>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-img"><img src="assets/automated_crane_1779893691669.png" alt="Automated Overhead Crane"/></div>
+          <div class="solution-body">
+            <h4>Automated Overhead Crane</h4>
+            <p>Advanced electric overhead travelling crane systems with intelligent operational controls for improved productivity.</p>
+            <div class="solution-tags"><span>PLC Controls</span><span>Smart Automation</span><span>High Precision</span></div>
+          </div>
+        </div>
+        <div class="solution-card solution-card-dark">
+          <div class="solution-body">
+            <h4>Customized EOT Crane Solutions</h4>
+            <p>Tailor-made crane systems developed according to lifting capacity, span length, workflow movement, and industry-specific operational requirements.</p>
+            <a href="#contact" class="btn-yellow">ENQUIRE NOW →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY MEKARK -->
+  <section class="why-section" id="performance">
+    <div class="container">
+      <p class="section-label">WHY CHOOSE MEKARK?</p>
+      <h2>Why Mekark is a Trusted EOT Crane Company in Chennai</h2>
+      <div class="why-grid">
+        <div class="why-card"><div class="why-num">01</div><h4>In-House Engineering &amp; Manufacturing</h4><p>Complete design, fabrication, and execution managed internally for better quality control and faster delivery timelines.</p></div>
+        <div class="why-card"><div class="why-num">02</div><h4>Application-Based Crane Design</h4><p>Every crane system is engineered specifically for your workflow, lifting frequency, material type, and industry requirements.</p></div>
+        <div class="why-card"><div class="why-num">03</div><h4>High Load Capacity Expertise</h4><p>Specialized in heavy-duty EOT crane systems for demanding industrial lifting environments.</p></div>
+        <div class="why-card"><div class="why-num">04</div><h4>Precision Fabrication Standards</h4><p>Advanced fabrication processes ensure structural accuracy, durability, and operational stability.</p></div>
+        <div class="why-card"><div class="why-num">05</div><h4>Faster Installation &amp; Commissioning</h4><p>Optimized execution process reduces installation downtime and accelerates operational readiness.</p></div>
+        <div class="why-card"><div class="why-num">06</div><h4>Complete Lifecycle Support</h4><p>From crane runway beam solutions to maintenance, modernization, inspections, and retrofitting — Mekark supports every stage.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="industries-section" id="industries">
+    <div class="container">
+      <p class="section-label">INDUSTRIES WE SERVE</p>
+      <h2>Industrial EOT Crane Systems for Diverse Applications</h2>
+      <div class="industries-grid">
+        <div class="industry-card" style="background-image:url('assets/steel_plant_crane_1779893609345.png');background-size:cover;background-position:center">
+          <div class="industry-overlay"><h4>Steel &amp; Heavy Engineering</h4><p>Heavy-duty crane systems for steel coil handling, billet movement, and foundry operations.</p></div>
+        </div>
+        <div class="industry-card" style="background-image:url('assets/single_girder_crane_1779893563730.png');background-size:cover;background-position:center">
+          <div class="industry-overlay"><h4>Manufacturing Plants</h4><p>Assembly line crane systems designed to improve workflow and material movement.</p></div>
+        </div>
+        <div class="industry-card" style="background-image:url('assets/warehouse_crane_1779893668960.png');background-size:cover;background-position:center">
+          <div class="industry-overlay"><h4>Warehouses &amp; Logistics</h4><p>Industrial warehouse crane systems engineered for smooth inventory handling.</p></div>
+        </div>
+        <div class="industry-card" style="background-image:url('assets/crane_installation_1779893647076.png');background-size:cover;background-position:center">
+          <div class="industry-overlay"><h4>Power &amp; Infrastructure</h4><p>Reliable turbine handling EOT cranes for large-scale industrial applications.</p></div>
+        </div>
+        <div class="industry-card" style="background-image:url('assets/double_girder_crane_1779893580951.png');background-size:cover;background-position:center">
+          <div class="industry-overlay"><h4>Automotive Industries</h4><p>Precision overhead crane systems for automotive manufacturing and component handling.</p></div>
+        </div>
+        <div class="industry-card" style="background-image:url('assets/hero_crane_industrial_1779893545158.png');background-size:cover;background-position:center">
+          <div class="industry-overlay"><h4>Cement &amp; Process Industries</h4><p>Durable industrial crane systems built for demanding environmental conditions.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- URGENCY STRIP -->
+  <section class="urgency-strip">
+    <div class="container">
+      <h2>Production Delays Caused by Inefficient Material Handling?</h2>
+      <p>Every hour of downtime affects production output, operational efficiency, and project timelines. Upgrade to High-Performance EOT Crane Systems Built for Continuous Industrial Operations.</p>
+      <div class="urgency-btns">
+        <a href="#contact" class="btn-yellow">SPEAK WITH CRANE EXPERT</a>
+        <a href="#contact" class="btn-outline-white">SCHEDULE SITE INSPECTION</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section">
+    <div class="container">
+      <p class="section-label">OUR SERVICES</p>
+      <h2>Complete Industrial Crane Services</h2>
+      <div class="services-grid">
+        <div class="service-item"><span class="service-num">01</span><h4>EOT Crane Design &amp; Fabrication</h4><p>Customized industrial crane manufacturing using precision engineering and high-quality structural fabrication.</p></div>
+        <div class="service-item"><span class="service-num">02</span><h4>EOT Crane Installation Services</h4><p>Safe and efficient erection, alignment, testing, and commissioning services for industrial crane systems.</p></div>
+        <div class="service-item"><span class="service-num">03</span><h4>EOT Crane Maintenance Services</h4><p>Preventive maintenance programs designed to improve crane lifespan and reduce operational downtime.</p></div>
+        <div class="service-item"><span class="service-num">04</span><h4>EOT Crane AMC Services</h4><p>Comprehensive annual maintenance contracts with inspection, servicing, and performance monitoring support.</p></div>
+        <div class="service-item"><span class="service-num">05</span><h4>Crane Modernization Services</h4><p>Upgrade existing crane systems with advanced components, automation systems, and enhanced operational capabilities.</p></div>
+        <div class="service-item"><span class="service-num">06</span><h4>Crane Inspection &amp; Load Testing</h4><p>Professional testing and inspection services for operational safety and industrial compliance.</p></div>
+        <div class="service-item"><span class="service-num">07</span><h4>EOT Crane Retrofitting Solutions</h4><p>Performance enhancement solutions for existing industrial crane systems.</p></div>
+        <div class="service-item"><span class="service-num">08</span><h4>Crane Spare Parts Supplier</h4><p>Reliable supply of industrial crane components and replacement spare parts.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <p class="section-label">GET IN TOUCH</p>
+          <h2>Planning a New EOT Crane Installation?</h2>
+          <p>Get expert consultation from our crane engineering team and receive a customized crane solution based on your operational requirements.</p>
+          <ul class="contact-benefits">
+            <li>✓ Crane Capacity Recommendation</li>
+            <li>✓ Span &amp; Hook Height Planning</li>
+            <li>✓ Structural Feasibility Guidance</li>
+            <li>✓ Cost Estimation</li>
+            <li>✓ Technical Proposal</li>
+            <li>✓ Site Evaluation Support</li>
+          </ul>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <input type="text" placeholder="Name *" required/>
+              <input type="text" placeholder="Company Name *" required/>
+            </div>
+            <div class="form-row">
+              <input type="tel" placeholder="Phone Number *" required/>
+              <input type="email" placeholder="Email Address *" required/>
+            </div>
+            <div class="form-row">
+              <input type="text" placeholder="Crane Capacity Requirement"/>
+              <input type="text" placeholder="Industry Type"/>
+            </div>
+            <input type="text" placeholder="Project Location"/>
+            <textarea placeholder="Requirement Details" rows="4"></textarea>
+            <button type="submit" class="btn-yellow btn-full">GET MY FREE QUOTE →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <p class="section-label">FAQ</p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What is an EOT crane? <span class="faq-arrow">+</span></button>
+          <div class="faq-a">An EOT (Electric Overhead Travelling) crane is an industrial lifting system used for moving heavy materials within factories, warehouses, and industrial facilities.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What industries use EOT crane systems? <span class="faq-arrow">+</span></button>
+          <div class="faq-a">EOT crane systems are widely used in steel plants, manufacturing industries, warehouses, logistics facilities, power plants, and infrastructure projects.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What is the difference between single girder and double girder EOT cranes? <span class="faq-arrow">+</span></button>
+          <div class="faq-a">Single girder EOT cranes are suitable for medium-duty applications, while double girder EOT cranes are designed for high-capacity heavy-duty industrial operations.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Does Mekark provide EOT crane installation services in India? <span class="faq-arrow">+</span></button>
+          <div class="faq-a">Yes. Mekark provides complete EOT crane installation, commissioning, testing, modernization, and maintenance services across India.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Can Mekark customize industrial overhead crane systems? <span class="faq-arrow">+</span></button>
+          <div class="faq-a">Yes. We develop customized EOT crane solutions based on lifting requirements, industrial workflow, and operational challenges.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo"><span class="logo-bar"></span>MEKARK</div>
+          <p>EOT Crane Manufacturer in Chennai delivering industrial overhead crane systems across India.</p>
+          <p>+91 44 0000 0000 | inquiry@mekark.com</p>
+        </div>
+        <div>
+          <h5>SOLUTIONS</h5>
+          <ul>
+            <li>Single Girder EOT Crane</li>
+            <li>Double Girder EOT Crane</li>
+            <li>Steel Plant EOT Crane</li>
+            <li>Warehouse Crane Systems</li>
+            <li>Automated Crane Systems</li>
+          </ul>
+        </div>
+        <div>
+          <h5>SERVICES</h5>
+          <ul>
+            <li>Design &amp; Fabrication</li>
+            <li>Installation Services</li>
+            <li>AMC &amp; Maintenance</li>
+            <li>Crane Modernization</li>
+            <li>Load Testing</li>
+          </ul>
+        </div>
+        <div>
+          <h5>INDUSTRIES</h5>
+          <ul>
+            <li>Steel &amp; Heavy Engineering</li>
+            <li>Manufacturing Plants</li>
+            <li>Warehouses &amp; Logistics</li>
+            <li>Power &amp; Infrastructure</li>
+            <li>Automotive Industries</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Mekark. All rights reserved. EOT Crane Manufacturer in India.</p>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- end #pageContent -->
+
+<script>
+/* =====================================================
+   MEKARK — Full-page video scroll scrub
+   Video plays frame-by-frame across the ENTIRE page
+   ===================================================== */
+
+/* ---------- 1. FULL-PAGE VIDEO SCRUB ---------- */
+const video       = document.getElementById('bgVideo');
+const progressBar = document.getElementById('scrollProgressBar');
+let rafId = null;
+
+video.addEventListener('loadedmetadata', () => {});
+video.addEventListener('canplay', () => {});
+video.load();
+// Pause immediately — scrub controls playback
+video.addEventListener('loadeddata', () => { video.pause(); });
+
+function getScrollProgress() {
+  const scrollTop  = window.scrollY;
+  const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+  return docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+}
+
+function updateScrub() {
+  rafId = null;
+  const progress = getScrollProgress();
+
+  // Scrub video to matching frame
+  if (video.duration > 0) {
+    const target = progress * video.duration;
+    if (Math.abs(video.currentTime - target) > 0.008) {
+      video.currentTime = target;
+    }
+  }
+
+  // Progress bar
+  if (progressBar) progressBar.style.width = (progress * 100) + '%';
+}
+
+window.addEventListener('scroll', () => {
+  if (!rafId) rafId = requestAnimationFrame(updateScrub);
+}, { passive: true });
+
+// Run immediately
+requestAnimationFrame(updateScrub);
+
+
+/* ---------- 2. NAVBAR ---------- */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 80);
+}, { passive: true });
+
+
+/* ---------- 3. HAMBURGER ---------- */
+const hamburger  = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+  hamburger.classList.toggle('active');
+});
+
+
+/* ---------- 4. SCROLL REVEAL ---------- */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const d = parseInt(entry.target.dataset.delay || 0, 10);
+      setTimeout(() => entry.target.classList.add('visible'), d);
+      revealObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+function addReveal(selector, cls, step = 80) {
+  document.querySelectorAll(selector).forEach((el, i) => {
+    if (!el.classList.contains('reveal') && !el.classList.contains('reveal-left') && !el.classList.contains('reveal-right')) {
+      el.classList.add(cls);
+    }
+    el.dataset.delay = i * step;
+    revealObs.observe(el);
+  });
+}
+
+addReveal('.process-step',   'reveal',       0);
+addReveal('.benefit-item',   'reveal',       60);
+addReveal('.why-card',       'reveal',       80);
+addReveal('.solution-card',  'reveal',       80);
+addReveal('.service-item',   'reveal',       60);
+addReveal('.industry-card',  'reveal',       80);
+addReveal('.faq-item',       'reveal',       60);
+
+document.querySelectorAll('.intro-grid > div').forEach((el, i) => {
+  el.classList.add(i === 0 ? 'reveal-left' : 'reveal-right');
+  revealObs.observe(el);
+});
+document.querySelectorAll('.process-intro > *').forEach((el, i) => {
+  el.classList.add(i === 0 ? 'reveal-left' : 'reveal-right');
+  revealObs.observe(el);
+});
+document.querySelectorAll('.contact-grid > *').forEach((el, i) => {
+  el.classList.add(i === 0 ? 'reveal-left' : 'reveal-right');
+  revealObs.observe(el);
+});
+document.querySelectorAll('.footer-grid > div').forEach((el, i) => {
+  el.classList.add('reveal');
+  el.dataset.delay = i * 80;
+  revealObs.observe(el);
+});
+
+
+/* ---------- 5. FAQ ---------- */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(e => e.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+
+/* ---------- 6. FORM ---------- */
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = '✓ SUBMITTED — WE\'LL CONTACT YOU SHORTLY';
+  btn.style.background = '#111';
+  btn.style.color = '#fff';
+  btn.disabled = true;
+}
+
+
+/* ---------- 7. SMOOTH SCROLL ---------- */
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const t = document.querySelector(link.getAttribute('href'));
+    if (t) {
+      e.preventDefault();
+      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('active');
+    }
+  });
+});
+
+</script>
+</body>
+</html>
+
