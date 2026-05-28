@@ -48,9 +48,9 @@ h1,h2,h3,h4,h5{color:#111}
 .urgency-strip h2,.urgency-strip p{color:#fff!important}
 /* Industry overlay keeps white */
 .industry-overlay h4,.industry-overlay p{color:#fff!important}
-/* Hero title — dark since video has light tint */
-.hero-title{color:#111}
-.hero-sub{color:rgba(0,0,0,0.72)}
+/* Hero title — WHITE with shadow for contrast over video */
+.hero-title{color:#fff!important;text-shadow:0 2px 24px rgba(0,0,0,0.55),0 1px 4px rgba(0,0,0,0.4)}
+.hero-sub{color:rgba(255,255,255,0.90)!important;text-shadow:0 1px 8px rgba(0,0,0,0.45)}
 /* Contact benefits list */
 .contact-benefits li{color:rgba(0,0,0,0.70)}
 /* Footer */
@@ -234,8 +234,8 @@ h1,h2,h3,h4,h5{color:#111}
 .urgency-strip h2{font-size:clamp(24px,3vw,42px);font-weight:900;color:#fff;margin-bottom:16px}
 .urgency-strip p{color:rgba(255,255,255,0.85);font-size:16px;max-width:640px;margin:0 auto 36px;line-height:1.7}
 .urgency-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.urgency-strip .btn-yellow{background:#fff!important;color:var(--red)!important;font-weight:800}
-.urgency-strip .btn-yellow:hover{background:#f5f5f5!important;transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,255,255,0.3)}
+.urgency-strip .btn-yellow{background:#fff!important;color:var(--red)!important;font-weight:800;transition:all .3s!important}
+.urgency-strip .btn-yellow:hover{background:#111!important;color:#fff!important;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.35)!important}
 .urgency-strip .btn-outline-white{border-color:rgba(255,255,255,0.60);color:#fff}
 .urgency-strip .btn-outline-white:hover{background:rgba(255,255,255,0.15)}
 
