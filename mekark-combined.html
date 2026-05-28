@@ -28,6 +28,37 @@ ul{list-style:none}
   --blur-sm:blur(3px);
 }
 
+/* ===== GLOBAL HEADING & TEXT FIX — ensure black on light glass ===== */
+.intro-strip h2,.benefits-section h2,.process-section h2,.solutions-section h2,
+.why-section h2,.industries-section h2,.services-section h2,.contact-left h2,
+.faq-section h2,.process-intro h2,.contact-left p,
+.intro-grid h2,.intro-grid p,
+h1,h2,h3,h4,h5{color:#111}
+.step-content h3{color:#111}
+.step-content p{color:rgba(0,0,0,0.62)}
+.why-card h4{color:#111}
+.why-card p{color:rgba(0,0,0,0.60)}
+.solution-body h4{color:#111}
+.solution-body p{color:rgba(0,0,0,0.60)}
+.service-item h4{color:#111}
+.service-item p{color:rgba(0,0,0,0.58)}
+.faq-q{color:#111}
+.faq-a{color:rgba(0,0,0,0.62)}
+/* Urgency strip keeps white text on red bg */
+.urgency-strip h2,.urgency-strip p{color:#fff!important}
+/* Industry overlay keeps white */
+.industry-overlay h4,.industry-overlay p{color:#fff!important}
+/* Hero title — dark since video has light tint */
+.hero-title{color:#111}
+.hero-sub{color:rgba(0,0,0,0.72)}
+/* Contact benefits list */
+.contact-benefits li{color:rgba(0,0,0,0.70)}
+/* Footer */
+.footer-grid>div>p{color:rgba(0,0,0,0.55)}
+.footer-grid ul li{color:rgba(0,0,0,0.55)}
+.footer-bottom p{color:rgba(0,0,0,0.50)}
+
+
 /* ===== FIXED VIDEO BACKGROUND ===== */
 #bgVideoWrap{
   position:fixed;
@@ -204,7 +235,7 @@ ul{list-style:none}
 .urgency-strip p{color:rgba(255,255,255,0.85);font-size:16px;max-width:640px;margin:0 auto 36px;line-height:1.7}
 .urgency-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .urgency-strip .btn-yellow{background:#000;color:#111}
-.urgency-strip .btn-red:hover{background:#f0f0f0}
+.urgency-strip .btn-yellow:hover{background:#f0f0f0}
 .urgency-strip .btn-outline-white{border-color:rgba(255,255,255,0.60);color:#fff}
 .urgency-strip .btn-outline-white:hover{background:rgba(255,255,255,0.15)}
 
@@ -1015,6 +1046,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 </script>
 </body>
 </html>
+
 
 
 
